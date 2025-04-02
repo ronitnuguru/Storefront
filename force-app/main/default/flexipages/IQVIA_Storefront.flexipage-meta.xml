@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>storefrontMainNavCard</componentName>
+                <identifier>c_storefrontMainNavCard</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column1</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>IQVIA Storefront enhances enterprise operations through a refined user experience, leveraging advanced artificial intelligence and data analytics capabilities. Our strategic optimization of the Salesforce interface enables streamlined, efficient execution of mission-critical business processes.</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>header</name>
+                    <value>Welcome to the IQVIA Storefront!</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>welcomeMatActionLabel</name>
+                    <value>Learn More</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>welcomeMatActionLink</name>
+                    <value>https://www.salesforce.com/news/press-releases/2024/04/08/iqvia-and-salesforce-expand-global-partnership-to-accelerate-the-development-of-life-sciences-cloud/</value>
+                </componentInstanceProperties>
+                <componentName>storefrontDetails</componentName>
+                <identifier>c_storefrontDetails</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column2</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Storefront</masterLabel>
+    <template>
+        <name>flexipage:appHomeTemplateTwoColumns</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

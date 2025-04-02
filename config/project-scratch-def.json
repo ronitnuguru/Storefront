@@ -1,0 +1,36 @@
+{
+  "orgName": "IQVIA Marketplace",
+  "edition": "Partner Developer",
+  "hasSampleData": true,
+  "release": "current",
+  "country": "US",
+  "language": "en_US",
+  "features": [
+    "EnableSetPasswordInApi",
+    "Einstein1AIPlatform",
+    "EinsteinGPTForDevelopers",
+    "CustomerDataPlatform",
+    "CustomerDataPlatformLite",
+    "MarketingUser",
+    "DevOpsCenter"
+  ],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": "true",
+      "enableUsersAreLightningOnly": "true",
+      "enableLexEndUsersNoSwitching": "true"
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": "false"
+    },
+    "einsteinGptSettings": {
+      "enableEinsteinGptPlatform": "true"
+    },
+    "customerDataPlatformSettings": {
+      "enableCustomerDataPlatform": "true"
+    },
+    "devHubSettings": {
+      "enableDevOpsCenterGA": "true"
+    }
+  }
+}

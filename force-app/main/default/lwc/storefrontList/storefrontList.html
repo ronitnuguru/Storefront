@@ -1,0 +1,43 @@
+<template>
+    <fieldset class="slds-form-element" role="radiogroup">
+        <div class="slds-form-element__control">
+            <template for:each={visualList} for:item="visual">
+                <div class="slds-visual-picker slds-visual-picker_vertical" key={visual.Id}>
+                    <input 
+                        aria-label={visual.Label__c} 
+                        id={visual.Id} 
+                        type="radio" 
+                        name="option" 
+                        value={visual.Label__c}
+                        data-id={visual.In_App_Guidance_Link__c}
+                        onclick={handleChooseVisualPicker}
+                    />
+                    <label for={visual.Id}>
+                        <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                            <span class="">
+                                <span class="slds-text-heading_small slds-text-title_bold slds-truncate slds-m-bottom_x-small">
+                                    <lightning-icon
+                                        icon-name={visual.Icon_Name__c}
+                                        size="small"
+                                        class="slds-m-right_x-small"
+                                    ></lightning-icon>
+                                    {visual.Label__c}
+                                </span>
+                                <span class="slds-text-title">{visual.Description__c}</span>      
+                            </span>
+                        </span>
+                        <span class="slds-icon_container slds-visual-picker__text-check">
+                          <lightning-icon
+                              icon-name="utility:check"
+                              alternative-text="check"
+                              title="check"
+                              size="x-small"
+                              variant="bare"
+                          ></lightning-icon>
+                        </span>
+                    </label>
+                </div>
+            </template>
+        </div>
+    </fieldset>
+</template>

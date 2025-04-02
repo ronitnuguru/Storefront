@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Agent Walkthrough</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;Here&apos;s a list of all the IQVIA Agents at your disposal:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Agentforce (Default)&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Life Sciences Agent&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Pharmaceutical Agent&lt;/strong&gt;:&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Medical Tech Agent&lt;/strong&gt;:&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Provider Agent&lt;/strong&gt;:&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Click on &lt;strong&gt;Open the Builder&lt;/strong&gt; to review the respective Agent&apos;s &lt;strong&gt;Topics&lt;/strong&gt;, &lt;strong&gt;Actions&lt;/strong&gt;, &lt;strong&gt;Prompts&lt;/strong&gt;, &lt;strong&gt;Instructions&lt;/strong&gt; and how they interact with Salesforce&apos;s Agentic Layer&lt;/p&gt;</body>
+        <customApplication>setup__all</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <experience>Lightning</experience>
+        <header>IQVIA + Agentforce</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Agent Walkthrough Step 1</masterLabel>
+        <publishedDate>2025-04-02</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2025-03-25</startDate>
+        <stepNumber>1</stepNumber>
+        <targetPageKey1>EinsteinCopilot</targetPageKey1>
+        <targetPageKey2>home</targetPageKey2>
+        <targetPageType>setup__homePage</targetPageType>
+        <themeColor>Theme1</themeColor>
+        <themeSaturation>Dark</themeSaturation>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Agents</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

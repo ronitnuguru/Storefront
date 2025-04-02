@@ -1,0 +1,139 @@
+<template>
+    <template lwc:if={label}>
+        <lightning-card hide-header>
+            <lightning-card class="card-style">
+                <h3 slot="title" class="slds-truncate">
+                    <lightning-icon 
+                        icon-name="standard:skill"
+                        size="medium"
+                        class="slds-m-right_x-small"
+                    ></lightning-icon>
+                    Setup Assistant
+                    <template lwc:if={label}>
+                        <span>&nbsp;for {label}</span>
+                    </template>
+                </h3>
+                <lightning-button-group slot="actions">
+                    <template lwc:if={inAppGuidanceLink}>
+                        <lightning-button 
+                            label="In-App Guidance" 
+                            icon-name="utility:walkthroughs" 
+                            onclick={inAppWalkthrough}
+                        ></lightning-button>
+                    </template>
+                    <lightning-button 
+                            label="Back"
+                            icon-name="utility:back" 
+                            onclick={handleBacktoWelcomeMat}
+                    ></lightning-button>
+                </lightning-button-group>
+                <div class="slds-card__body_inner slds-m-horizontal_medium slds-card_boundary timeline-card-style">
+                    <ol class="slds-setup-assistant">
+                        <template if:true={displaySpinner}>
+                            <lightning-spinner
+                                alternative-text="Loading"
+                                size="medium"
+                                variant="brand"
+                            ></lightning-spinner>
+                        </template>
+                        <template for:each={storefrontItems} for:item="item">
+                            <li class="slds-setup-assistant__item" key={item.Id}>
+                                <article class="slds-setup-assistant__step">
+                                    <div class="slds-summary-detail">
+                                        <div class="slds-container_fluid">
+                                            <c-storefront-step-detail
+                                                step-number={item.Order__c}
+                                                step-title={item.Title__c}
+                                                step-description={item.Description__c}
+                                                step-time={item.Time__c}
+                                            ></c-storefront-step-detail>
+                                            <div class="slds-setup-assistant__step-detail">
+                                                <div class="slds-progress slds-progress_vertical slds-progress_success">
+                                                    <ol class="slds-progress__list slds-progress__list-bordered">
+                                                        <template lwc:if={item.Storefront_Item_Steps__r}>
+                                                            <template for:each={item.Storefront_Item_Steps__r}  for:item="step">
+                                                                <template lwc:if={step.IsCompleted__c}>
+                                                                    <li class="slds-progress__item slds-is-completed" key={step.id}>
+                                                                        <lightning-icon
+                                                                            icon-name="utility:success"
+                                                                            variant="success"
+                                                                            size="xx-small"
+                                                                            class="slds-progress__marker slds-progress__marker_icon slds-progress__marker_icon-success"
+                                                                        ></lightning-icon>
+                                                                        <c-storefront-sub-step-detail
+                                                                            description={step.Description__c}
+                                                                            button-label={step.Button_Label__c}
+                                                                            button-icon={step.Button_Icon__c}
+                                                                            button-type={step.Button_Type__c}
+                                                                            button-variant={step.Button_Variant__c}
+                                                                            button-link={step.Link__c}
+                                                                            step-type={step.Status__c}
+                                                                            class="slds-progress__item_content slds-grid slds-grid_align-spread"
+                                                                        ></c-storefront-sub-step-detail>
+                                                                    </li>
+                                                                </template>
+                                                                <template lwc:elseif={step.IsMarker__c}>
+                                                                    <li class="slds-progress__item" key={step.id}>
+                                                                        <div class="slds-progress__marker"></div>
+                                                                        <c-storefront-sub-step-detail
+                                                                            description={step.Description__c}
+                                                                            button-label={step.Button_Label__c}
+                                                                            button-icon={step.Button_Icon__c}
+                                                                            button-type={step.Button_Type__c}
+                                                                            button-variant={step.Button_Variant__c}
+                                                                            button-link={step.Link__c}
+                                                                            step-type={step.Status__c}
+                                                                            class="slds-progress__item_content slds-grid slds-grid_align-spread"
+                                                                        ></c-storefront-sub-step-detail>
+                                                                    </li>
+                                                                </template>
+                                                                <template lwc:elseif={step.IsActive__c}>
+                                                                    <li class="slds-progress__item slds-is-active" key={step.id}>
+                                                                        <div class="slds-progress__marker"></div>
+                                                                        <c-storefront-sub-step-detail
+                                                                            description={step.Description__c}
+                                                                            button-label={step.Button_Label__c}
+                                                                            button-icon={step.Button_Icon__c}
+                                                                            button-type={step.Button_Type__c}
+                                                                            button-variant={step.Button_Variant__c}
+                                                                            button-link={step.Link__c}
+                                                                            step-type={step.Status__c}
+                                                                            class="slds-progress__item_content slds-grid slds-grid_align-spread"
+                                                                            ></c-storefront-sub-step-detail>
+                                                                    </li>
+                                                                </template>
+                                                            </template>
+                                                        </template>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+                        </template>
+                        <template if:false={displaySpinner}>
+                            <template lwc:if={storefrontItems}>
+                                <template lwc:if={noStorefrontItems}>
+                                    <c-show-illustration
+                                        header="Data not available"
+                                        description="The setup data you're trying to access isn't available. If the issue still persists,  ask your admin for help."
+                                    ></c-show-illustration>
+                                </template>
+                            </template>
+                        </template>
+                    </ol>
+                </div>
+            </lightning-card>
+        </lightning-card>
+    </template>
+    <template lwc:else>
+        <c-storefront-welcome-mat
+            header={header}
+            description={description}
+            welcome-mat-action-label={welcomeMatActionLabel}
+            welcome-mat-action-link={welcomeMatActionLink}
+        ></c-storefront-welcome-mat>
+    </template>
+</template>

@@ -1,0 +1,94 @@
+<template>
+    <lightning-modal-header class="modal-header-style">
+        <div class="slds-grid slds-einstein-header">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate slds-grid slds-grid_align-spread slds-grid_align-center slds-wrap slds-m-horizontal_small">
+              <div>
+                <div class="slds-media__body">
+                    <h2 class="slds-modal__title slds-hyphenate slds-text-title_bold" style="font-weight: 600;">
+                        <span class="slds-m-left_large">{label}</span>
+                    </h2>
+                </div>
+              </div>
+              <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_2-of-3"></div>
+            </header>
+        </div>
+    </lightning-modal-header>
+    <lightning-modal-body class="slds-card slds-card__body" style="position: relative;">
+        <div class="">
+            <template if:true={displaySpinner}>
+                <lightning-spinner
+                  alternative-text="Loading"
+                  size="medium"
+                  variant="brand"
+                ></lightning-spinner>
+            </template>
+            <lightning-combobox
+                name="models"
+                label="Models"
+                value={modelsValue}
+                placeholder="Select Supported Models"
+                dropdown-alignment="auto"
+                options={modelsTypeOptions}
+                onchange={handleModelsTypeChange}
+            ></lightning-combobox>
+            <lightning-textarea 
+                name="prompt" 
+                label="Prompt"
+                placeholder="Message Agentforce..."
+                onchange={handlePromptChange} 
+                value={prompt}
+                required
+            ></lightning-textarea>
+            <template lwc:if={displayResult}>
+                <div class="slds-feed__item">
+                    <article class="slds-post slds-card_boundary slds-p-top_small">
+                        <header class="slds-post__header slds-media">
+                            <div class="slds-media__figure">
+                                <lightning-icon
+                                    icon-name="utility:agent_astro"
+                                    size="medium"
+                                ></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                  <p class="slds-text-title_caps slds-text-title_bold">
+                                    <span title={agentName}>{agentName}</span>
+                                  </p>
+                                </div>
+                                <p class="slds-text-body_small">
+                                    {promptCurrentTime}
+                                </p>
+                            </div>
+                        </header> 
+                        <div class="slds-post__content slds-text-longform slds-expression__group">
+                            <lightning-formatted-rich-text value={response}></lightning-formatted-rich-text>
+                        </div>
+                    </article>
+                </div>
+            </template>
+            <template lwc:if={templatePrompts}>
+                <template if:true={enableGenerate}>
+                    <div class="slds-grid slds-wrap">
+                        <template for:each={templatePrompts} for:item="prompt">
+                            <lightning-button 
+                                label={prompt.label}
+                                value={prompt.label}
+                                key={prompt.label} 
+                                icon-name={prompt.icon} 
+                                icon-position="left" 
+                                class="slds-m-right_x-small slds-m-top_x-small"
+                                onclick={handlePromptTemplateInput}
+                            ></lightning-button>
+                        </template> 
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <template lwc:if={displayResult}>
+            <lightning-button label="Clear" onclick={handleClear} class="slds-m-left_x-small"></lightning-button>
+        </template>
+        <lightning-button variant="brand" icon-position="right" icon-name="utility:sparkles" label="Generate" onclick={handleGenerate} class="slds-m-left_x-small" disabled={enableGenerate}></lightning-button>
+    </lightning-modal-footer>
+</template>

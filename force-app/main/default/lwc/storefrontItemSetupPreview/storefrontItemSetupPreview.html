@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <h3 slot="title" class="slds-truncate">
+            <lightning-icon icon-name="standard:document_preview" size="medium" class="slds-m-right_x-small"></lightning-icon>
+            Storefront Item Setup Preview
+        </h3>
+        <div class="slds-card__body slds-card__body_inner slds-card_boundary slds-m-around_small slds-p-around_medium">
+            <template lwc:if={item}>
+                <c-storefront-step-detail
+                    step-number={stepNumber}
+                    step-title={stepTitle}
+                    step-description={stepDescription}
+                    step-time={stepTime}
+                ></c-storefront-step-detail>
+            </template>
+        </div>
+    </lightning-card>
+</template>

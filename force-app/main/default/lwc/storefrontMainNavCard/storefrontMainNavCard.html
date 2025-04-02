@@ -1,0 +1,37 @@
+<template>
+    <template if:true={displaySpinner}>
+        <lightning-spinner
+          alternative-text="Loading"
+          size="medium"
+          variant="brand"
+        ></lightning-spinner>
+    </template>
+    <template lwc:if={itemDetails}>
+        <lightning-card hide-header>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-grow-none">
+                    <lightning-vertical-navigation selected-item={selectedNavItem} onselect={handleNavSelect}>
+                        <lightning-vertical-navigation-section label="">
+                            <template lwc:if={navCollections}>
+                                <template for:each={navCollections} for:item="item">
+                                    <lightning-vertical-navigation-item-icon
+                                        key={item.Id}
+                                        label={item.Navigation_Name__c}
+                                        name={item.Name}
+                                        icon-name={item.Navigation_Icon__c}
+                                    ></lightning-vertical-navigation-item-icon>
+                                </template>
+                            </template>
+                        </lightning-vertical-navigation-section>
+                    </lightning-vertical-navigation>
+                </div>
+                <div class="slds-col">
+                    <c-storefront-selected-item
+                        header={selectedNavItem}
+                        item-details={itemDetails}
+                    ></c-storefront-selected-item>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+</template>

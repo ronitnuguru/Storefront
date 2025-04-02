@@ -1,0 +1,50 @@
+<template>
+    <lightning-card>
+        <h3 slot="title" class="slds-truncate">
+            <lightning-icon icon-name="standard:document_preview" size="medium" class="slds-m-right_x-small"></lightning-icon>
+            Storefront Item Preview
+        </h3>
+        <div class="slds-card__body slds-card__body_inner">
+            <template lwc:if={label}>
+                <div class="slds-visual-picker slds-visual-picker_vertical">
+                    <input 
+                        aria-label={label} 
+                        id={label}
+                        type="radio" 
+                        name="option" 
+                        value={label}            
+                        onclick={handleChooseVisualPicker}
+                    />
+                    <label for={label}>
+                        <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                            <span class="">
+                                <span class="slds-text-heading_small slds-text-title_bold slds-truncate slds-m-bottom_x-small">
+                                    <template lwc:if={icon}>
+                                        <lightning-icon
+                                            icon-name={icon}
+                                            size="small"
+                                            class="slds-m-right_x-small"
+                                        ></lightning-icon>
+                                    </template>
+                                    {label}
+                                </span>
+                                <template lwc:if={description}>
+                                    <span class="slds-text-title">{description}</span>
+                                </template>
+                            </span>
+                        </span>
+                        <span class="slds-icon_container slds-visual-picker__text-check">
+                          <lightning-icon
+                              icon-name="utility:check"
+                              alternative-text="check"
+                              title="check"
+                              size="x-small"
+                              variant="bare"
+                          ></lightning-icon>
+                        </span>
+                    </label>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

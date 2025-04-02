@@ -1,0 +1,6 @@
+.modal-header-style{
+    --slds-c-modal-header-spacing-blockend: 0;
+    --slds-c-modal-header-spacing-blockstart: 0;
+    --slds-c-modal-header-spacing-inlineend: 0;
+    --slds-c-modal-header-spacing-inlinestart: 0;
+}

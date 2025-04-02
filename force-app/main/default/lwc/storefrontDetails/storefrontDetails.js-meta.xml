@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Storefront Details</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property name="header" label="Header" type="String" default="Welcome Mat Header..."></property>
+            <property name="description" label="Description" type="String" default="Welcome Mat Description..."></property>
+            <property name="welcomeMatActionLabel" label="Button Label" type="String" default="Button Label"></property>
+            <property name="welcomeMatActionLink" label="Button Link" type="String" default="https://www.salesforce.com/"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

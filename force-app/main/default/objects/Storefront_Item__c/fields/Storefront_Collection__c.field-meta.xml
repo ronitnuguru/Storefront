@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Storefront_Collection__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>Storefront Collection</label>
+    <referenceTo>Storefront_Collection__c</referenceTo>
+    <relationshipLabel>Storefront Items</relationshipLabel>
+    <relationshipName>Storefront_Items</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

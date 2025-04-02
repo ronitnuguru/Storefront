@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+        <h3 slot="title" class="slds-truncate">
+            <lightning-icon icon-name="standard:document_preview" size="medium" class="slds-m-right_x-small"></lightning-icon>
+            Storefront Collection Preview
+        </h3>
+        <div class="slds-card__body slds-card__body_inner">
+            <template lwc:if={collection.data}>
+                <lightning-vertical-navigation selected-item="selectedItem">
+                    <lightning-vertical-navigation-section label="">
+                        <lightning-vertical-navigation-item-icon
+                            label={name}
+                            name="selectedItem"
+                            icon-name={icon}
+                        ></lightning-vertical-navigation-item-icon>
+                    </lightning-vertical-navigation-section>
+                </lightning-vertical-navigation>
+            </template>
+        </div>
+    </lightning-card>
+</template>

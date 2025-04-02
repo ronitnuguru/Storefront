@@ -1,0 +1,64 @@
+<template>
+    <lightning-card>
+        <h3 slot="title" class="slds-truncate">
+            <lightning-icon icon-name="standard:document_preview" size="medium" class="slds-m-right_x-small"></lightning-icon>
+            Storefront Item Step Preview
+        </h3>
+        <div class="slds-card__body slds-card__body_inner slds-card_boundary slds-m-around_small slds-p-around_medium">
+            <div class="slds-progress slds-progress_vertical slds-progress_success">
+                <ol class="slds-progress__list slds-progress__list-bordered">
+                    <template lwc:if={isCompleted}>
+                        <li class="slds-progress__item slds-is-completed">
+                            <lightning-icon
+                                icon-name="utility:success"
+                                variant="success"
+                                size="xx-small"
+                                class="slds-progress__marker slds-progress__marker_icon slds-progress__marker_icon-success"
+                            ></lightning-icon>
+                            <c-storefront-sub-step-detail
+                                description={description}
+                                button-label={buttonLabel}
+                                button-icon={buttonIcon}
+                                button-type={buttonType}
+                                button-variant={buttonVariant}
+                                button-link={link}
+                                step-type={status}
+                                class="slds-progress__item_content slds-grid slds-grid_align-spread"
+                            ></c-storefront-sub-step-detail>
+                        </li>
+                    </template>
+                    <template lwc:elseif={isMarker}>
+                        <li class="slds-progress__item">
+                            <div class="slds-progress__marker"></div>
+                            <c-storefront-sub-step-detail
+                                description={description}
+                                button-label={buttonLabel}
+                                button-icon={buttonIcon}
+                                button-type={buttonType}
+                                button-variant={buttonVariant}
+                                button-link={link}
+                                step-type={status}
+                                class="slds-progress__item_content slds-grid slds-grid_align-spread"
+                            ></c-storefront-sub-step-detail>
+                        </li>
+                    </template>
+                    <template lwc:elseif={isActive}>
+                        <li class="slds-progress__item slds-is-active">
+                            <div class="slds-progress__marker"></div>
+                            <c-storefront-sub-step-detail
+                                description={description}
+                                button-label={buttonLabel}
+                                button-icon={buttonIcon}
+                                button-type={buttonType}
+                                button-variant={buttonVariant}
+                                button-link={link}
+                                step-type={status}
+                                class="slds-progress__item_content slds-grid slds-grid_align-spread"
+                            ></c-storefront-sub-step-detail>
+                        </li>
+                    </template>
+                </ol>
+            </div>
+        </div>
+    </lightning-card>
+</template>

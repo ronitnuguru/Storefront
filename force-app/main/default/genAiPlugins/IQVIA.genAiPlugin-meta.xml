@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiPluginUtterances>
+        <developerName>utterance_defineiqvi0</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_defineiqvi0</masterLabel>
+        <utterance>Define IQVIA&apos;s OCE?</utterance>
+    </aiPluginUtterances>
+    <canEscalate>false</canEscalate>
+    <description>Go over any questions regarding IQVIA&apos;s OCE product</description>
+    <developerName>IQVIA</developerName>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>AdminCopilot__AnswerQuestionsWithSalesforceDocumentation</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>IQVIA_Prompt_Templates</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Refer to the Data library to answer any questions about knowledge base</description>
+        <developerName>instruction_refertothe0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_refertothe0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>For the chunk Id - please don&apos;t ask the user for input. Automatically use 1CxOx0000000s5FKAQ as your chunk Id</description>
+        <developerName>instruction_forthechun1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_forthechun1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Display the text response in a neat formatted way that is easily readable by the end user</description>
+        <developerName>instruction_displaythe2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_displaythe2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Reformat the response to be clear and readable for the end user. Present the key information in a structured and natural tone. Ensure that technical terms are explained simply when needed. If a source is included, display it in a way that does not disrupt readability.
+
+For the example, the promptResponse is provided in JSON format. Just give me response and it&apos;s underlying text value</description>
+        <developerName>instruction_reformatth3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_reformatth3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>&quot;If the retriever ID does not yield any search results, notify the user and request additional details or a different ID
+
+Notify User of No Results: Informs the user when no search results are found and requests additional details or a different ID.</description>
+        <developerName>instruction_iftheretri4</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_iftheretri4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Display the text response in a neat formatted way that is easily readable by the end user. Extract and present only the text values from any JSON responses.</description>
+        <developerName>instruction_displaythe5</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_displaythe5</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When handling JSON responses, parse the JSON to extract and display only the relevant text information, ensuring it is clear and understandable for the user.</description>
+        <developerName>instruction_whenhandli6</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whenhandli6</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ensure responses are concise and directly address the user&apos;s query without additional context or metadata unless explicitly requested by the user
+
+Display the text response in a neat formatted way that is easily readable by the end user. Extract and present only the text values from any JSON responses. Ensure the response does not include the JSON structure.</description>
+        <developerName>instruction_ensureresp7</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ensureresp7</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ensure responses are concise and directly address the user&apos;s query by summarizing the key functions and benefits of the feature in a clear and structured manner.&quot;</description>
+        <developerName>instruction_ensureresp8</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ensureresp8</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>IQVIA</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to look at the IQVIA Data Library and answer any relevant questions from the knowledge base</scope>
+</GenAiPlugin>

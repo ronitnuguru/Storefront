@@ -1,0 +1,24 @@
+<template>
+    <div class="slds-size_3-of-4">
+        <lightning-formatted-rich-text value={description}></lightning-formatted-rich-text>
+    </div>
+    <div class="slds-grid slds-grid_align-end slds-size_1-of-4">
+        <template lwc:if={isButtonIcon}>
+            <lightning-button-icon 
+                icon-name={buttonIcon}
+                variant={buttonVariant}
+                onclick={handleButtonClick}
+                tooltip={buttonLabel}
+            ></lightning-button-icon>
+        </template>
+        <template lwc:elseif={isButtonStandard}>
+            <lightning-button 
+                variant={buttonVariant}
+                onclick={handleButtonClick}
+                label={buttonLabel}
+            ></lightning-button>
+        </template>
+        <template lwc:else>
+        </template>
+    </div>
+</template>

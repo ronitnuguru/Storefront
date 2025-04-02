@@ -1,0 +1,55 @@
+<template>
+    <template if:true={displaySpinner}>
+        <lightning-spinner
+          alternative-text="Loading"
+          size="medium"
+          variant="brand"
+        ></lightning-spinner>
+    </template>
+    <template lwc:if={selectedItems}>
+        <div class="slds-border_left slds-border_bottom slds-border_right slds-border_top slds-var-m-top_medium slds-m-right_medium timeline-card-style">
+            <lightning-card class="card-style">
+                <h3 slot="title" class="slds-truncate">
+                    <lightning-icon icon-name={itemDetails.Icon_Name__c} size="medium" class="slds-m-right_x-small"></lightning-icon>
+                    {header}
+                </h3>
+                <lightning-button-group slot="actions">
+                    <template lwc:if={itemDetails.Primary_Button_Link__c}>
+                        <template lwc:if={itemDetails.Primary_Button_Icon__c}>
+                            <lightning-button-icon
+                                icon-name={itemDetails.Primary_Button_Icon__c}
+                                onclick={handlePrimaryAction}
+                            ></lightning-button-icon>
+                        </template>
+                        <template lwc:else>
+                            <lightning-button
+                                label={itemDetails.Primary_Button_Label__c}
+                                icon-name={itemDetails.Primary_Button_Icon__c}
+                                onclick={handlePrimaryAction}
+                            ></lightning-button>
+                        </template>
+                    </template>
+                    <template lwc:if={itemDetails.Secondary_Button_Link__c}>
+                        <template lwc:if={itemDetails.Secondary_Button_Icon__c}>
+                            <lightning-button-icon
+                                icon-name={itemDetails.Secondary_Button_Icon__c}
+                                onclick={handleSecondaryAction}
+                            ></lightning-button-icon>
+                        </template>
+                        <template lwc:else>
+                            <lightning-button
+                                label={itemDetails.Secondary_Button_Label__c}
+                                onclick={itemDetails.Secondary_Button_Link__c}
+                        ></lightning-button>
+                        </template>
+                    </template>
+                </lightning-button-group>
+                <div class="slds-card__body slds-card__body_inner slds-m-bottom_small">
+                    <c-storefront-list
+                        visual-list={selectedItems}
+                    ></c-storefront-list>
+                </div>
+            </lightning-card>
+        </div>
+    </template>
+</template>
