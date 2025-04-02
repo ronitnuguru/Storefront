@@ -20,5 +20,4 @@
     <tabs>Storefront_Item_Setup__c</tabs>
     <tabs>Storefront_Item_Step__c</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>IQVIA_UtilityBar</utilityBar>
 </CustomApplication>

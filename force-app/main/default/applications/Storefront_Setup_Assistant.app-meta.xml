@@ -19,5 +19,4 @@
     <tabs>Storefront_Item_Setup__c</tabs>
     <tabs>Storefront_Item_Step__c</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>Storefront_Setup_Assistant_UtilityBar</utilityBar>
 </CustomApplication>
