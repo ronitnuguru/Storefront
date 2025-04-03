@@ -39,47 +39,6 @@ export default class StorefrontWelcomeMat extends NavigationMixin(LightningEleme
         }
     }   
 
-    welcomeMatList = [
-        {
-            id: 0,
-            title: 'What is the Connected Storefront?',
-            description: 'Seamless digital and in-person interactions, enhancing patient engagement and streamlining care delivery.',
-            icon: 'standard:video',
-            linkType: 'web',
-            link: 'https://drive.google.com/file/d/1MFfrqo7a5bZ14XHQzByvsNytSV2PROOg/view?usp=sharing'
-        },
-        {
-            id: 1,
-            title: 'Life Sciences Migration Alliance',
-            description: 'Tailored and flexible solutions for life sciences expertise and ensuring successful client outcomes.',
-            icon: 'standard:partners',
-            linkType: 'web',
-            link: 'https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=26eb9e4e-0b89-416f-94af-4e2c164820d7'
-        },
-        {
-            id: 2,
-            title: 'Ask Agentforce',
-            description: `AI-powered assistance to help find accurate information and streamline decision-making.`,
-            icon: 'standard:story',
-            linkType: 'agentforce'
-        },
-        {
-            id: 3,
-            title: 'Visit our Website',
-            description: 'Global provider of technology solutions and clinical research services.',
-            icon: 'standard:visualforce_page',
-            linkType: 'web',
-            link: 'https://www.iqvia.com/'
-        },
-        {
-            id: 4,
-            title: 'Connect with IQVIA Support',
-            description: 'Seek expert assistance tailored to your health and life sciences needs.',
-            icon: 'standard:workforce_engagement',
-            linkType: 'email'
-        }
-    ];
-
     handleWelcomeStepClick(event){
         switch (event.currentTarget.dataset.id){
             case "email":
