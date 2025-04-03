@@ -4,6 +4,9 @@
     <columns>NAME</columns>
     <columns>Order__c</columns>
     <columns>Title__c</columns>
+    <columns>External_Id__c</columns>
+    <columns>Time__c</columns>
+    <columns>External_Id_Setups__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

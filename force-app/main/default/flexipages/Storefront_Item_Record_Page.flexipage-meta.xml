@@ -160,6 +160,22 @@
                 <identifier>RecordIn_App_Guidance_Link_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>RecordExternal_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id_Items__c</fieldItem>
+                <identifier>RecordExternal_Id_Items__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-e5ba9b9b-e69d-4614-b839-d8bf20b82d97</name>
         <type>Facet</type>
     </flexiPageRegions>

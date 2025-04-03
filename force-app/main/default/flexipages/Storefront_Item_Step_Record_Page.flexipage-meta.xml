@@ -101,6 +101,16 @@
                 <identifier>RecordIsCompleted_cField2</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>RecordExternal_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-507202a4-00a5-46a1-b198-c5cd77f84e45</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -169,6 +169,22 @@
                 <identifier>RecordStorefront_Item__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>RecordExternal_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id_Setups__c</fieldItem>
+                <identifier>RecordExternal_Id_Setups__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-6ebbf64d-48e4-4391-be79-bb89f49899f6</name>
         <type>Facet</type>
     </flexiPageRegions>

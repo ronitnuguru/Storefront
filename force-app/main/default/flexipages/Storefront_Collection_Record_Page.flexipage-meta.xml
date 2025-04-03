@@ -207,6 +207,12 @@
                 <identifier>RecordSecondary_Button_Link_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.External_Id__c</fieldItem>
+                <identifier>RecordExternal_Id__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-96005c44-612a-4828-b67c-c4bfdc7157d3</name>
         <type>Facet</type>
     </flexiPageRegions>
