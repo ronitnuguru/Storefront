@@ -13,30 +13,34 @@
                         label={welcomeMatActionLabel}
                         variant="brand"
                         onclick={handleWelcomeMatAction}
-                    ></lightning-button>
+                        ></lightning-button>
                 </div>
             </div>
         </div>
         <ul class="slds-welcome-mat__tiles slds-size_1-of-2 slds-welcome-mat__tiles_info-only">
-            <template for:each={welcomeMatList} for:item="mat">
-                <li class="slds-welcome-mat__tile" onclick={handleWelcomeStepClick} key={mat.id} data-id={mat.linkType} data-link={mat.link}>
-                    <span class="slds-box slds-box_link slds-media">
-                        <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                            <div class="slds-welcome-mat__tile-figure">
-                                <lightning-icon 
-                                    icon-name={mat.icon}
-                                    size="medium"
-                                    ></lightning-icon>
-                            </div>
-                        </div>
-                        <div class="slds-media__body">
-                            <div class="slds-welcome-mat__tile-body">
-                                <h3 class="slds-welcome-mat__tile-title">{mat.title}</h3>
-                                <p class="slds-welcome-mat__tile-description">{mat.description}</p>
-                            </div>
-                        </div>
-                    </span>
-                </li>
+            <template lwc:if={welcomeMatCollection}>
+                <div>
+                    <template for:each={welcomeMatCollection} for:item="mat">
+                        <li class="slds-welcome-mat__tile" onclick={handleWelcomeStepClick} key={mat.Id} data-id={mat.Link_Type__c} data-link={mat.Link__c}>
+                            <span class="slds-box slds-box_link slds-media">
+                                <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                                    <div class="slds-welcome-mat__tile-figure">
+                                        <lightning-icon 
+                                            icon-name={mat.Icon__c}
+                                            size="medium"
+                                            ></lightning-icon>
+                                    </div>
+                                </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-welcome-mat__tile-body">
+                                        <h3 class="slds-welcome-mat__tile-title">{mat.Title__c}</h3>
+                                        <p class="slds-welcome-mat__tile-description">{mat.Description__c}</p>
+                                    </div>
+                                </div>
+                            </span>
+                        </li>
+                    </template>
+                </div>
             </template>
         </ul>
     </div>

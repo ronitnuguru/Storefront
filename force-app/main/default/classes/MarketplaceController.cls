@@ -33,6 +33,22 @@ public with sharing class MarketplaceController {
     }
 
     @AuraEnabled(cacheable=true)
+    public static List<Welcome_Mat_Item__c> getWelcomeMatItems() {
+        List<Welcome_Mat_Item__c> items = new List<Welcome_Mat_Item__c>();
+        try {
+            items = [
+                SELECT Description__c, Name, Order__c, Title__c, Link__c, Icon__c, Link_Type__c
+                FROM Welcome_Mat_Item__c 
+                ORDER BY Order__c ASC NULLS FIRST
+                LIMIT 50
+            ];
+        } catch (Exception e) {
+            throw new AuraHandledException('Error fetching welcome mat items: ' + e.getMessage());
+        }
+        return items;
+    }
+
+    @AuraEnabled(cacheable=true)
     public static List<Storefront_Item_Setup__c> getStorefrontSetupItems(String itemName) {
         List<Storefront_Item_Setup__c> items = new List<Storefront_Item_Setup__c>();
         try {

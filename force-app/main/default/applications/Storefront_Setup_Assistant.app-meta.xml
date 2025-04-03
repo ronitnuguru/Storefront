@@ -18,5 +18,6 @@
     <tabs>Storefront_Item__c</tabs>
     <tabs>Storefront_Item_Setup__c</tabs>
     <tabs>Storefront_Item_Step__c</tabs>
+    <tabs>Welcome_Mat_Item__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

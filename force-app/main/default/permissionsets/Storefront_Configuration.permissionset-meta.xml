@@ -111,6 +111,16 @@
         <field>Storefront_Item__c.In_App_Guidance_Link__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Welcome_Mat_Item__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Welcome_Mat_Item__c.Link__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Storefront Configuration</label>
     <objectPermissions>
@@ -153,6 +163,16 @@
         <viewAllFields>true</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Welcome_Mat_Item__c</object>
+        <viewAllFields>true</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <tabSettings>
         <tab>IQVIA_Storefront</tab>
         <visibility>Visible</visibility>
@@ -171,6 +191,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Storefront_Item__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Welcome_Mat_Item__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

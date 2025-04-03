@@ -1,16 +1,43 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import { NavigationMixin } from "lightning/navigation";
 import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
 import askAgentforceModal from 'c/askAgentforceModal';
 import getAnyAccountRecordForMail from '@salesforce/apex/MarketplaceController.getAnyAccountRecordForMail';
+import getWelcomeMatItems from '@salesforce/apex/MarketplaceController.getWelcomeMatItems';
 
 export default class StorefrontWelcomeMat extends NavigationMixin(LightningElement) {
 
-    @api header = 'Welcome to the IQVIA Storefront!';
-    @api description = `IQVIA's Storefront enhances enterprise operations through a refined user experience, leveraging advanced artificial intelligence and data analytics capabilities. Our strategic optimization of the Salesforce interface enables streamlined, efficient execution of mission-critical business processes.`;
+    @api header;
+    @api description;
 
-    @api welcomeMatActionLabel = 'Learn More';
-    @api welcomeMatActionLink = 'https://www.salesforce.com/news/press-releases/2024/04/08/iqvia-and-salesforce-expand-global-partnership-to-accelerate-the-development-of-life-sciences-cloud/';
+    @api welcomeMatActionLabel;
+    @api welcomeMatActionLink;
+
+    displaySpinner = true;
+    welcomeMatCollection;
+    welcomeMatError;
+
+    @wire(getWelcomeMatItems)
+    wiredItems({ error, data }) {
+        if (data) {
+            this.displaySpinner = false;
+            this.welcomeMatCollection = data;
+            this.welcomeMatError = undefined;
+        } else if (error) {
+            this.displaySpinner = false;
+            this.welcomeMatCollection = undefined;
+            this.welcomeMatError = error;
+            console.error(error);
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: "Error",
+                    message: error,
+                    variant: "error"
+                })
+            );
+        }
+    }   
 
     welcomeMatList = [
         {
@@ -69,7 +96,6 @@ export default class StorefrontWelcomeMat extends NavigationMixin(LightningEleme
             case "agentforce":
                 this.openModal({
                     headerLabel: "Ask Agentforce",
-                    userPrompt: `How to develop and use Second-Generation Packaging (2GP) in Salesforce?`,
                     systemPrompt: `You are an AI assistant that generates responses in a well-structured, readable rich text format suitable for rendering in HTML. Your output should follow these guidelines: 1. **Use HTML Formatting:** - Format key points using <strong> for emphasis and <ul> or <ol> for lists. - Use <p> for paragraphs to ensure readability. - Include <code> for inline code snippets and <pre><code> for blocks of code when needed. 2. **Ensure Readability & Structure:** - Break content into **logical sections** with headings and spacing. - Use **bullet points and numbered lists** for better clarity. - Avoid long, dense paragraphs—use line breaks where necessary. 3. **Enhance User Experience:** - Include relevant hyperlinks (<a href="URL">Link Text</a>) when mentioning external resources. - When listing examples, format them clearly in <blockquote> or <code> where applicable. - Maintain **consistent indentation** and spacing for readability. Do not include unnecessary white spaces. Do not include heading tags and stay consistent with paragraph tags`
                 })
                 break;
